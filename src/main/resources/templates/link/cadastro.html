@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br"
+<html lang="pt-BR"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 
 <div class="container">
     <div class="text-center bg-body border rounded-5 p-5 mt-5 mb-5">
-        <h1>Hotlink 2 - Meus link favoritos</h1>
+        <h1>Hotlink - Meus link favoritos</h1>
         <p class="col-lg-6 mx-auto mb-4">
             This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context
             to a page or section when no content is available and to encourage visitors to take a specific action.
@@ -30,19 +30,22 @@
 
 <div class="container">
 
-    <form action="/link" method="post" class="align-items-center">
+    <form action="/link" method="post">
 
-        <div class="form-g">
+        <div class="mb-3">
             <label for="titulo" class="form-label">Título</label>
-            <input type="text" class="form-control-lg" placeholder="Título" id="titulo" name="titulo"/>
+            <input type="text" class="form-control" placeholder="Título" id="titulo" name="titulo"/>
         </div>
 
-        <div class="form-g">
-            <input type="text" class="form-control" placeholder="Título" id="endereco" name="endereco"/>
-            <label for="endereco">Link</label>
+        <div class="mb-3">
+            <label for="endereco" class="form-label">Endereço</label>
+            <input type="text" class="form-control" placeholder="Endereço" id="endereco" name="endereco"/>
         </div>
 
-        <button class="btn btn-primary" type="submit"> Salvar</button>
+
+        <div class="text-center">
+            <button class="btn btn-lg btn-primary" type="submit">Salvar</button>
+        </div>
 
     </form>
 
