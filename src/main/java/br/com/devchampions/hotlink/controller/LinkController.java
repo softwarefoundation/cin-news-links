@@ -17,16 +17,15 @@ public class LinkController {
     @Autowired
     private LinkService linkService;
 
-    @GetMapping
-    public String listarLinks(){
-        return "links";
+    @GetMapping("/cadastro")
+    public String viewCadastro() {
+        return "link/cadastro";
     }
 
     @PostMapping
-    public String salvar(Link link){
-        log.info("Salvar link");
+    public String salvar(Link link) {
         linkService.salvar(link);
-        return "redirect:/index.html";
+        return "redirect:/home";
     }
 
 
