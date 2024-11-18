@@ -6,11 +6,13 @@
 
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-reboot.css">
 </head>
 <body>
 
 <div class="container">
-    <div class="text-center bg-body border rounded-5 p-5 mt-5">
+    <div class="text-center bg-body border rounded-5 p-5 mt-5 mb-5">
         <h1>Hotlink - Meus link favoritos</h1>
 
         <p class="col-lg-6 mx-auto mb-4">
@@ -21,6 +23,26 @@
         <button class="btn btn-primary" type="button">Adicionar Hotlink</button>
     </div>
 
+
+</div>
+
+<div class="container">
+
+    <form action="/link" method="post" class="align-items-center">
+
+        <div class="form-g">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" class="form-control-lg" placeholder="Título" id="titulo" name="titulo"/>
+        </div>
+
+        <div class="form-g">
+            <input type="text" class="form-control" placeholder="Título" id="endereco" name="endereco"/>
+            <label for="endereco">Link</label>
+        </div>
+
+        <button class="btn btn-dark" type="submit">Salvar</button>
+
+    </form>
 
 </div>
 
