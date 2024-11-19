@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotlink</title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-reboot.css">
+</head>
+<body>
+
+<div th:insert="~{layouts/fragments/header :: header-principal}"></div>
+
+<div layout:fragment="layout_body_principal"></div>
+
+<script src="/assets/js/bootstrap.js"></script>
+<script src="/assets/js/bootstrap.bundle.js"></script>
+</body>
+</html>
