@@ -25,7 +25,7 @@ public class LinkController {
     @PostMapping
     public String salvar(Link link) {
         linkService.salvar(link);
-        return "redirect:/home";
+        return "redirect:";
     }
 
 
