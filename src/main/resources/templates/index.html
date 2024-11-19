@@ -4,23 +4,28 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout}">
 
-<div class="container" layout:fragment="layout_body_principal">
-    <table class="table align-items-center">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Titulo</th>
-            <th scope="col">Link</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="link : ${links}">
-            <th scope="row">1</th>
-            <td th:text="${link.titulo}"></td>
-            <td><a th:href="${link.endereco}" target="_blank" th:text="${link.endereco}"></a></td>
-        </tr>
-        </tbody>
-    </table>
+<div layout:fragment="layout_body_principal">
+    <div class="container" th:if="${not #lists.isEmpty(links)}">
+        <table class="table align-items-center">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="link : ${links}">
+                <th scope="row">1</th>
+                <td th:text="${link.titulo}"></td>
+                <td><a th:href="${link.endereco}" target="_blank" th:text="${link.endereco}"></a></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    <a class="btn btn-dark position-fixed bottom-0 end-0 mb-3 me-3" th:href="@{/link/cadastro}"> Novo Link</a>
 </div>
 
 </html>
