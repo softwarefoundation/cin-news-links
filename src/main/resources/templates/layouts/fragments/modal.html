@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div th:fragment="fragment_modal_confirmar_exclusao_link">
+    <div class="modal fade" th:attr="id='modal_confirmar_exclusao_link_'+${link.id}" data-bs-backdrop="static"
+         data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-center fw-bold" id="staticBackdropLabel">Confirma a exclusão do link?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center" th:text="${link.titulo}"></p>
+                    <a href="#" th:text="${link.endereco}"></a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Sim, excluir!</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

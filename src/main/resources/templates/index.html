@@ -20,14 +20,17 @@
                 <th scope="row">1</th>
                 <td th:text="${link.titulo}"></td>
                 <td><a th:href="${link.endereco}" target="_blank" th:text="${link.endereco}"></a></td>
-                <td><span class="material-symbols-outlined delete">delete</span></td>
+                <td><span class="material-symbols-outlined delete" data-bs-toggle="modal"
+                       th:attr="data-bs-target='#modal_confirmar_exclusao_link_'+${link.id}">delete</span>
+                    <div th:insert="~{layouts/fragments/modal :: fragment_modal_confirmar_exclusao_link (link=${link})}"></div>
+                </td>
             </tr>
             </tbody>
         </table>
 
 
     </div>
-    <a class="btn btn-dark position-fixed bottom-0 end-0 mb-3 me-3" th:href="@{/link/cadastro}"><i class="bi bi-plus-lg"></i> Novo Link</a>
+
 </div>
 
 </html>
