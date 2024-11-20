@@ -1,3 +1,8 @@
 .delete {
     color: tomato;
 }
+
+/* Alterar a cor das linhas da tabela quando mouse passar por elas*/
+.table {
+    --bs-table-hover-bg: rgba(53, 234, 16, 0.2);
+}
