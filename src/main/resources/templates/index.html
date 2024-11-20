@@ -10,6 +10,7 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col"></th>
                 <th scope="col">Titulo</th>
                 <th scope="col">Link</th>
                 <th scope="col">Ações</th>
@@ -18,10 +19,11 @@
             <tbody>
             <tr th:each="link, iteration : ${links}">
                 <th th:text="${iteration.count}"></th>
+                <td><img th:src="${link.getDominio()}"></td>
                 <td th:text="${link.titulo}"></td>
                 <td><a th:href="${link.endereco}" target="_blank" th:text="${link.endereco}"></a></td>
                 <td><span class="material-symbols-outlined delete" data-bs-toggle="modal"
-                       th:attr="data-bs-target='#modal_confirmar_exclusao_link_'+${link.id}">delete</span>
+                          th:attr="data-bs-target='#modal_confirmar_exclusao_link_'+${link.id}">delete</span>
                     <div th:insert="~{layouts/fragments/modal :: fragment_modal_confirmar_exclusao_link (link=${link})}"></div>
                 </td>
             </tr>

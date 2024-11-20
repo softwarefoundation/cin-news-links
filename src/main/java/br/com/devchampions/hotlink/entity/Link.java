@@ -1,5 +1,6 @@
 package br.com.devchampions.hotlink.entity;
 
+import br.com.devchampions.hotlink.utils.http.FaviconUtil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 @Entity
 @Table(name = "tb01_link")
@@ -28,6 +30,10 @@ public class Link implements Serializable {
 
     public Long getId() {
         return id;
+    }
+
+    public String getDominio() {
+        return FaviconUtil.getFavionFromUrl(this.endereco);
     }
 
     public void setId(Long id) {
