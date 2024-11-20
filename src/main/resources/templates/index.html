@@ -16,8 +16,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="link : ${links}">
-                <th scope="row">1</th>
+            <tr th:each="link, iteration : ${links}">
+                <th th:text="${iteration.count}"></th>
                 <td th:text="${link.titulo}"></td>
                 <td><a th:href="${link.endereco}" target="_blank" th:text="${link.endereco}"></a></td>
                 <td><span class="material-symbols-outlined delete" data-bs-toggle="modal"
@@ -27,7 +27,6 @@
             </tr>
             </tbody>
         </table>
-
 
     </div>
 
