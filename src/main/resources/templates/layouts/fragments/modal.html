@@ -21,7 +21,7 @@
                     <a href="#" th:text="${link.endereco}"></a>
                 </div>
                 <div class="modal-footer">
-                    <a th:href="'link/excluir/' + ${link.id}" class="btn btn-primary">Sim, excluir!</a>
+                    <a th:href="@{'link/excluir/' + ${link.id}}" class="btn btn-primary">Sim, excluir!</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
                 </div>
             </div>
