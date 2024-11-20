@@ -17,10 +17,10 @@ public class Link implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "titulo", length = 100, nullable = false)
+    @Column(name = "titulo", length = 200, nullable = false)
     private String titulo;
 
-    @Column(name = "endereco", length = 100, nullable = false)
+    @Column(name = "endereco", length = 1000, nullable = false, unique = true)
     private String endereco;
 
     public Link() {
