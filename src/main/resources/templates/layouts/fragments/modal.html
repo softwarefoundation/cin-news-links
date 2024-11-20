@@ -12,7 +12,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5 text-center fw-bold" id="staticBackdropLabel">Confirma a exclusão do link?</h1>
+                    <h1 class="modal-title fs-5 text-center fw-bold" id="staticBackdropLabel">Confirma a exclusão do
+                        link?</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -20,7 +21,7 @@
                     <a href="#" th:text="${link.endereco}"></a>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Sim, excluir!</button>
+                    <a th:href="'link/excluir/' + ${link.id}" class="btn btn-primary">Sim, excluir!</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
                 </div>
             </div>

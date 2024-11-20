@@ -24,4 +24,8 @@ public class LinkService {
         return this.linkRepository.findAll();
     }
 
+    public void excluir(Long linkId) {
+        this.linkRepository.deleteById(linkId);
+    }
+
 }
