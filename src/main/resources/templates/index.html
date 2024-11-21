@@ -5,7 +5,7 @@
       layout:decorate="~{layouts/layout}">
 
 <div layout:fragment="layout_body_principal">
-    <div class="container" th:if="${not #lists.isEmpty(links)}">
+    <div class="container mb-5" th:if="${not #lists.isEmpty(links)}">
         <table class="table align-items-center table-striped table-hover">
             <thead>
             <tr>
@@ -13,7 +13,7 @@
                 <th scope="col"></th>
                 <th scope="col">Titulo</th>
                 <th scope="col">Link</th>
-                <th scope="col">Ações</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
@@ -23,7 +23,7 @@
                 <td th:text="${link.titulo}"></td>
                 <td><a th:href="${link.endereco}" target="_blank" th:text="${link.endereco}"></a></td>
                 <td><span class="material-symbols-outlined delete" data-bs-toggle="modal"
-                          th:attr="data-bs-target='#modal_confirmar_exclusao_link_'+${link.id}">delete</span>
+                          th:attr="data-bs-target='#modal_confirmar_exclusao_link_'+${link.id}">close_small</span>
                     <div th:insert="~{layouts/fragments/modal :: fragment_modal_confirmar_exclusao_link (link=${link})}"></div>
                 </td>
             </tr>
@@ -31,7 +31,8 @@
         </table>
 
     </div>
-
+    <a class="btn btn-dark position-fixed bottom-0 end-0 mb-3 me-3" th:href="@{/link/cadastro}">
+        <i class="bi bi-plus-lg"></i> Novo Link</a>
 </div>
 
 </html>
