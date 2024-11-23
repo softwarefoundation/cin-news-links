@@ -17,7 +17,7 @@
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li sec:authorize="isAuthenticated()">
-                            <a class="dropdown-item" href="#">
+                            <a th:href="@{/logout}" class="dropdown-item">
                                 Sair
                                 <i class="bi bi-lock-fill"></i>
                             </a>

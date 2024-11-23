@@ -26,21 +26,16 @@ public class SecurityConfiguration {
         httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/").permitAll();
-                    auth.requestMatchers(HttpMethod.POST, "/login").permitAll();
-                    auth.requestMatchers(HttpMethod.GET, "/login").permitAll();
+                    auth.requestMatchers("/", "/login").permitAll();
                     auth.anyRequest().authenticated();
                 })
                 .formLogin(login -> {
                     login.loginPage("/login");
                     login.loginProcessingUrl("/login");
-//                    login.failureForwardUrl("/login");
-//                    login.failureUrl("/login");
-                    login.defaultSuccessUrl("/");
                     login.successForwardUrl("/");
                 })
-
                 .logout(logout -> {
+                    logout.logoutUrl("/logout");
                     logout.logoutSuccessUrl("/");
                     logout.deleteCookies("JSESSIONID");
                     logout.invalidateHttpSession(true);
