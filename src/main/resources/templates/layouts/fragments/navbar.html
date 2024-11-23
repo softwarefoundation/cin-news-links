@@ -6,7 +6,8 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg" th:fragment="navbar-principal">
     <div class="container">
         <a th:href="@{/}" class="navbar-brand">Hotlink</a>
-        <form class="d-flex">
+
+        <form sec:authorize="isAuthenticated()" class="d-flex">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -26,6 +27,10 @@
                 </li>
             </ul>
         </form>
+
+        <a th:href="@{/login}" sec:authorize="!isAuthenticated()"
+           class="navbar-brand btn btn-outline-primary ">Entrar</a>
+
     </div>
 </nav>
 
