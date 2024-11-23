@@ -2,6 +2,7 @@
 <html lang="pt-br"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorate="~{layouts/layout}">
 
 <div layout:fragment="layout_body_principal">
@@ -22,7 +23,8 @@
                 <td><img th:src="${link.getDominio()}"></td>
                 <td th:text="${link.titulo}"></td>
                 <td><a th:href="${link.endereco}" target="_blank" th:text="${link.endereco}"></a></td>
-                <td><span class="material-symbols-outlined delete" data-bs-toggle="modal"
+                <td>
+                    <span sec:authorize="hasRole('ROLE_ADMIN')" class="material-symbols-outlined delete" data-bs-toggle="modal"
                           th:attr="data-bs-target='#modal_confirmar_exclusao_link_'+${link.id}">close_small</span>
                     <div th:insert="~{layouts/fragments/modal :: fragment_modal_confirmar_exclusao_link (link=${link})}"></div>
                 </td>
