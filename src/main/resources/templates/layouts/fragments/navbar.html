@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg" th:fragment="navbar-principal">
     <div class="container">
@@ -15,7 +16,12 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li sec:authorize="isAuthenticated()">
+                            <a class="dropdown-item" href="#">
+                                Sair
+                                <i class="bi bi-lock-fill"></i>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
