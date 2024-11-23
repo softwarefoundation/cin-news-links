@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Usuario implements UserDetails {
+public class UsuarioDto implements UserDetails {
 
     private Long id;
     private String username;
@@ -15,7 +15,7 @@ public class Usuario implements UserDetails {
     private String nome;
     private List<GrantedAuthority> authorities = new ArrayList<>();
 
-    public Usuario(Long id, String username, String password, String nome) {
+    public UsuarioDto(Long id, String username, String password, String nome) {
         this.id = id;
         this.username = username;
         this.password = password;
