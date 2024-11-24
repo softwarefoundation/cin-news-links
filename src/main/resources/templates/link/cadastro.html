@@ -10,16 +10,22 @@
 
 <div class="container" layout:fragment="layout_body_principal">
 
-    <form action="/link" method="post">
+    <form action="/link" method="post" th:object="${link}">
 
         <div class="mb-3">
             <label for="titulo" class="form-label">Título</label>
-            <input type="text" class="form-control" placeholder="Título" id="titulo" name="titulo"/>
+            <input type="text" class="form-control" placeholder="Título" id="titulo" name="titulo"
+                   th:field="*{titulo}"/>
+            <p class="text-danger" th:errors="*{titulo}">Mensagem de Erro</p>
         </div>
 
         <div class="mb-3">
             <label for="endereco" class="form-label">Endereço</label>
-            <input type="text" class="form-control" placeholder="Endereço" id="endereco" name="endereco"/>
+            <input type="text" class="form-control" placeholder="Endereço" id="endereco" name="endereco"
+                   th:field="*{endereco}"/>
+            <p class="text-danger" th:if="${#fields.hasErrors('endereco')}" th:text="${#fields.errors('endereco')}">
+                Mensagem de Erro
+            </p>
         </div>
 
 
