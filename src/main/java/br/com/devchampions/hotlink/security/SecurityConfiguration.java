@@ -21,6 +21,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
         habilitarAcessoAosAssets(httpSecurity);
+        habilitarAcessoAoBancoH2(httpSecurity);
 
         httpSecurity
                 .csrf(csrf -> csrf.disable())
@@ -46,6 +47,10 @@ public class SecurityConfiguration {
 
     private void habilitarAcessoAosAssets(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(auth -> auth.requestMatchers("/assets/**").permitAll());
+    }
+
+    private void habilitarAcessoAoBancoH2(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.authorizeHttpRequests(auth -> auth.requestMatchers("/h2-console/**").permitAll());
     }
 
     @Bean
