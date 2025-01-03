@@ -13,6 +13,12 @@ java {
 	}
 }
 
+// Desabilita a criação do *.plain.jar
+jar {
+        enabled = false
+}
+
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
