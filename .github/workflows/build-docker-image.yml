@@ -20,9 +20,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Create time tag
+        run: |
+          echo "time={date + "%Y-%m-%d"}" >> $GITHUB_ENV
+
       - name: Build and push to dockerhub
         uses: docker/build-push-action@v5
         with:
           context:
           push: true
-          tags: dherkyan/app-hotlink:${{github.run_number}}
+          tags: dherkyan/app-hotlink:${{env.TIME}}-${{github.run_number}}
