@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: app-hotlink
-      image: dherkyan/app-hotlink:202501151351
+      image: dherkyan/app-hotlink:202501151512
       env:
         - name: PROFILES_ACTIVE
           value: dev
