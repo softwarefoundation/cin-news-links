@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-hotlink
+  labels:
+    type: hotlink
+spec:
+  containers:
+    - name: app-hotlink
+      image: dherkyan/app-hotlink:202501151351
+      env:
+        - name: PROFILES_ACTIVE
+          value: dev
+        - name: H2_WEB_ALLOW_OTHERS
+          value: "true"
+      ports:
+        - containerPort: 8080 # porta da aplicação
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-hotlink
+spec:
+  type: ClusterIP
+  selector:
+    type: hotlink
+  ports:
+    - name: http
+      targetPort: 8080 # porta da aplicação
+      port: 8080 # porta da aplicação
+#      nodePort: 30008 # porta que será exporta externamente
