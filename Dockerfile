@@ -8,12 +8,10 @@ COPY . .
 
 RUN gradle build -x test
 
-RUN cp -R /opt/app/build/libs/*.jar /opt/app/
-
-RUN ls -lh $APP_HOME
+RUN cp -R /opt/app/build/libs/* /opt/app/apps.jar
 
 RUN gradle clean
 
-EXPOSE $PORT
+EXPOSE 8080
 
 CMD ["java", "-jar", "apps.jar"]
