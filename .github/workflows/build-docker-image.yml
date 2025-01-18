@@ -31,16 +31,14 @@ jobs:
           context:
           push: true
           tags: dherkyan/app-hotlink:${{env.time}}
-  modifygit:
 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        name: changing the deployment of git repo
+      - name: changing the deployment of git repo
+        uses: actions/checkout@v4
         with:
           repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
-          token: ${{ secrets.GIT_PASSWORD }}
-      - name: modify the image
+          github_token: ${{ secrets.GIT_REPOSITORY_TOKEN }}
+
+      - name: Atualizar referência da imagem no arquivo deployment.yaml
         run: |
           git config user.email automation.deployment@gmail.com
           git config user.name 'Automation Deployment'
@@ -52,7 +50,7 @@ jobs:
           git add .
           git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
           git push origin main
-        env:
-          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
-          GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
-          RUN_NUMBER: ${{ github.run_number }}
+          env:
+            GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+            GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+            RUN_NUMBER: ${{ github.run_number }}
