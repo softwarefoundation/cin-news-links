@@ -23,6 +23,7 @@ jobs:
       - name: Create time tag
         run: |
           echo "time=$(date '+%Y%m%d%H%M')" >> $GITHUB_ENV
+          echo dherkyan/app-hotlink:${{env.time}}
 
       - name: Build and push to dockerhub
         uses: docker/build-push-action@v5
@@ -30,3 +31,28 @@ jobs:
           context:
           push: true
           tags: dherkyan/app-hotlink:${{env.time}}
+  modifygit:
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: changing the deployment of git repo
+        with:
+          repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
+          token: ${{ secrets.GIT_PASSWORD }}
+      - name: modify the image
+        run: |
+          git config user.email automation.deployment@gmail.com
+          git config user.name 'Automation Deployment'
+          pwd
+          cat deployment.yaml
+          pwd
+          sed -i "s+dherkyan/app-hotlink.*+dherkyan/app-hotlink:${{env.time}}+g" deployment.yaml
+          cat deployment.yaml
+          git add .
+          git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
+          git push origin main
+        env:
+          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+          GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+          RUN_NUMBER: ${{ github.run_number }}
