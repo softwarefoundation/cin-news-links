@@ -32,7 +32,7 @@ jobs:
           push: true
           tags: dherkyan/app-hotlink:${{env.time}}
   modifygit:
-    needs: docker
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
