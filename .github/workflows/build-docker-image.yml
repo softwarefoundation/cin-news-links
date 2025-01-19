@@ -35,7 +35,7 @@ jobs:
       - name: Checkout no repostiório (argocd-deploy-apps-cin-news-links-k8s)
         uses: actions/checkout@v4
         with:
-          repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
+          repository: 'softwarefoundation/argocd-deploy-apps-cin-news-links-k8s'
           ssh-key: ${{ secrets.DEPLOY_KEY }}
 
       - name: Atualizando arquivo de deployment do app (cin-news-links)
