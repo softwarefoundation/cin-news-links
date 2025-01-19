@@ -20,11 +20,11 @@ jobs:
 
       - name: Atualizar referência da imagem no arquivo deployment.yaml
         run: |
+          pwd
+          ls -lh
           git config user.email automation.deployment@gmail.com
           git config user.name 'Automation Deployment'
           git clone git@github.com:softwarefoundation/argocd-deploy-apps-cin-links-k8s.git
-          pwd
-          ls -lh
           cd ..
           ls -ls
           cat deployment.yaml
