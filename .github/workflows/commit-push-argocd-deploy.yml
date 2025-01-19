@@ -1,0 +1,39 @@
+#name: Build and push Docker image to dockerhub
+#
+#on:
+#  push:
+#    branches: [ "main" ]
+#
+#jobs:
+#
+#  build:
+#
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Atualizando YAML de publicação
+##        uses: actions/checkout@v4
+#        uses: webfactory/ssh-agent@v0.7.0
+#        with:
+#          repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
+#          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+#
+#      - name: Atualizar referência da imagem no arquivo deployment.yaml
+#        run: |
+#          git config user.email automation.deployment@gmail.com
+#          git config user.name 'Automation Deployment'
+#          pwd
+#          ls -lh
+#          cd ..
+#          ls -ls
+#          cat deployment.yaml
+#          pwd
+#          sed -i "s+dherkyan/app-hotlink.*+dherkyan/app-hotlink:${{env.time}}+g" deployment.yaml
+#          cat deployment.yaml
+#          git add .
+#          git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
+#          git push origin main
+#          env:
+#            GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+#            GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+#            RUN_NUMBER: ${{ github.run_number }}
