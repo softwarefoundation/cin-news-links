@@ -32,11 +32,12 @@ jobs:
           push: true
           tags: dherkyan/app-hotlink:${{env.time}}
 
-      - name: changing the deployment of git repo
-        uses: actions/checkout@v4
+      - name: Atualizando YAML de publicação
+#        uses: actions/checkout@v4
+        uses: webfactory/ssh-agent@v0.7.0
         with:
           repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
-          github_token: ${{ secrets.GIT_REPOSITORY_TOKEN }}
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
       - name: Atualizar referência da imagem no arquivo deployment.yaml
         run: |
@@ -50,7 +51,7 @@ jobs:
           git add .
           git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
           git push origin main
-          env:
-            GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
-            GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
-            RUN_NUMBER: ${{ github.run_number }}
+#          env:
+#            GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+#            GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+#            RUN_NUMBER: ${{ github.run_number }}
