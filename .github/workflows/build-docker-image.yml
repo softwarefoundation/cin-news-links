@@ -23,7 +23,7 @@ jobs:
       - name: Create time tag
         run: |
           echo "time=$(date '+%Y%m%d%H%M')" >> $GITHUB_ENV
-          echo dherkyan/app-hotlink:${{env.time}}
+          echo dherkyan/cin-news-links:${{env.time}}
 
       - name: Build and push to dockerhub
         uses: docker/build-push-action@v5
@@ -32,20 +32,20 @@ jobs:
           push: true
           tags: dherkyan/app-hotlink:${{env.time}}
 
-      - name: Checkout no repostiório (argocd-deploy-apps-cin-links-k8s)
+      - name: Checkout no repostiório (argocd-deploy-apps-cin-news-links-k8s)
         uses: actions/checkout@v4
         with:
           repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
           ssh-key: ${{ secrets.DEPLOY_KEY }}
 
-      - name: Atualizando arquivo de deployment do app (cin-links)
+      - name: Atualizando arquivo de deployment do app (cin-news-links)
         run: |
           git config user.email dherkyan@gmail.com
           git config user.name 'Automation Deployment Argo CD'
           pwd
           cat deployment.yaml
-          sed -i "s+dherkyan/app-hotlink.*+dherkyan/app-hotlink:${{github.run_number}}+g" deployment.yaml
+          sed -i "s+dherkyan/app-hotlink.*+dherkyan/cin-news-links:${{env.time}}+g" k8s/deployment.yaml
           cat deployment.yaml
           git add .
-          git commit -m '[Bot] Automation Deployment Argo CD: Deploy imagem dherkyan/app-hotlink:${{env.time}}'
+          git commit -m '[Bot] Automation Deployment Argo CD: Deploy imagem dherkyan/cin-news-links:${{env.time}}'
           git push origin main
