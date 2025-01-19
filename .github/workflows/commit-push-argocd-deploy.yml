@@ -17,26 +17,23 @@ jobs:
         with:
           repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
-        run: |
-          pwd
-          ls -lh
 
       - name: Atualizar referência da imagem no arquivo deployment.yaml
         run: |
           pwd
           ls -lh
-          git config user.email automation.deployment@gmail.com
-          git config user.name 'Automation Deployment'
-          git clone git@github.com:softwarefoundation/argocd-deploy-apps-cin-links-k8s.git
           cd ..
           ls -ls
-          cat deployment.yaml
-          pwd
-          sed -i "s+dherkyan/app-hotlink.*+dherkyan/app-hotlink:${{env.time}}+g" deployment.yaml
-          cat deployment.yaml
-          git add .
-          git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
-          git push origin main
+#          git config user.email automation.deployment@gmail.com
+#          git config user.name 'Automation Deployment'
+#          git clone git@github.com:softwarefoundation/argocd-deploy-apps-cin-links-k8s.git
+#          cat deployment.yaml
+#          pwd
+#          sed -i "s+dherkyan/app-hotlink.*+dherkyan/app-hotlink:${{env.time}}+g" deployment.yaml
+#          cat deployment.yaml
+#          git add .
+#          git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
+#          git push origin main
 #          env:
 #            GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
 #            GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
