@@ -17,6 +17,9 @@ jobs:
         with:
           repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          pwd
+          ls -lh
 
       - name: Atualizar referência da imagem no arquivo deployment.yaml
         run: |
