@@ -23,7 +23,7 @@ jobs:
           pwd
           ls -lh
           cd ..
-          ls -ls
+          ls -lh
 #          git config user.email automation.deployment@gmail.com
 #          git config user.name 'Automation Deployment'
 #          git clone git@github.com:softwarefoundation/argocd-deploy-apps-cin-links-k8s.git
