@@ -1,16 +1,16 @@
-name: Build and push Docker image to dockerhub
-
-on:
-  push:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
+#name: Build and push Docker image to dockerhub
+#
+#on:
+#  push:
+#    branches: [ "main" ]
+#
+#permissions:
+#  contents: read
+#
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
 #      - name: Atualizando YAML de publicação
 #        uses: actions/checkout@v4
 #        uses: webfactory/ssh-agent@v0.7.0
@@ -38,19 +38,20 @@ jobs:
 #            GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
 #            GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
 #            RUN_NUMBER: ${{ github.run_number }}
-      - name: changing the deployment of git repo
-        uses: actions/checkout@v4
-        with:
-          repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
-      - name: modify the image
-        run: |
-          git config user.email dherkyan@gmail.com
-          git config user.name 'Automation Deployment Argo CD'
-          pwd
-          cat deployment.yaml
-          sed -i "s+dherkyan/app-hotlink.*+dherkyan/app-hotlink:${{github.run_number}}+g" deployment.yaml
-          cat deployment.yaml
-          git add .
-          git commit -m '[Bot] Automation Deployment Argo CD: ${{ github.run_number }}'
-          git push origin main
+#      - name: changing the deployment of git repo
+#        uses: actions/checkout@v4
+#        with:
+#          repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
+#          ssh-key: ${{ secrets.DEPLOY_KEY }}
+#
+#      - name: modify the image
+#        run: |
+#          git config user.email dherkyan@gmail.com
+#          git config user.name 'Automation Deployment Argo CD'
+#          pwd
+#          cat deployment.yaml
+#          sed -i "s+dherkyan/app-hotlink.*+dherkyan/app-hotlink:${{github.run_number}}+g" deployment.yaml
+#          cat deployment.yaml
+#          git add .
+#          git commit -m '[Bot] Automation Deployment Argo CD: ${{ github.run_number }}'
+#          git push origin main
