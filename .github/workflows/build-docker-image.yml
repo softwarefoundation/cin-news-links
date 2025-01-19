@@ -44,6 +44,9 @@ jobs:
           git config user.email automation.deployment@gmail.com
           git config user.name 'Automation Deployment'
           pwd
+          ls -lh
+          cd ..
+          ls -ls
           cat deployment.yaml
           pwd
           sed -i "s+dherkyan/app-hotlink.*+dherkyan/app-hotlink:${{env.time}}+g" deployment.yaml
