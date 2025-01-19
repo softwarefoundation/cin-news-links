@@ -41,8 +41,8 @@ jobs:
       - name: changing the deployment of git repo
         uses: actions/checkout@v4
         with:
-          repository: 'tanmaybhandge/App-Manifest-'
-          token: ${{ secrets.DEPLOY_KEY }}
+          repository: 'softwarefoundation/argocd-deploy-apps-cin-links-k8s'
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
       - name: modify the image
         run: |
           git config user.email tanmay8928@gmail.com
