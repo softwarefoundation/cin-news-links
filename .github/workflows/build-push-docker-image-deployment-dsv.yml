@@ -47,5 +47,5 @@ jobs:
           sed -i "s+dherkyan/cin-news-links.*+dherkyan/cin-news-links:${{env.time}}+g" k8s/dsv/deployment.yaml
           cat k8s/dsv/deployment.yaml
           git add .
-          git commit -m '[Bot] Automation Deployment Argo CD: Deploy imagem dherkyan/cin-news-links:${{env.time}}'
+          git commit -m 'Deploy cin-news-links no ambiente DSV versão: cin-news-links:${{env.time}}'
           git push origin main
