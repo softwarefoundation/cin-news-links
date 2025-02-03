@@ -16,6 +16,8 @@ insert into tb01_link (titulo,endereco) values ('Estado do RJ passa a emitir nov
 insert into tb01_link (titulo,endereco) values ('Carteira de Identidade Nacional (CIN)','https://www.sc.gov.br/servicos/emitir-carteira-de-identidade');
 insert into tb01_link (titulo,endereco) values ('agendamento para emissão da carteira de identidade nacional - cin - pca - PCA','https://apdigital.portal.ap.gov.br/servico/solicitacao-de-agendamento-para-emissao-da-1o-via-da-carteira-de-identidade-nacional-cin1');
 insert into tb01_link (titulo,endereco) values ('Orientações para emissão da Nova Carteira de Identidade Nacional – CIN','https://www.ssp.am.gov.br/orientacoes-para-emissao-da-nova-carteira-de-identidade-nacional/');
+insert into tb01_link (titulo,endereco) values ('Quem tiver a nova carteira de identidade recebe excelente notícia','https://tribunademinas.com.br/colunas/maistendencias/quem-tiver-a-nova-carteira-de-identidade-recebe-excelente-noticia/');
+insert into tb01_link (titulo,endereco) values ('Prefeitura retoma atendimento para emissão da Carteira de Identidade Nacional exclusiva para maracanauenses','https://www.maracanau.ce.gov.br/prefeitura-retoma-atendimento-para-emissao-da-carteira-de-identidade-nacional-exclusiva-para-maracanauenses/');
 
 
 
