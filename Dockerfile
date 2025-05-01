@@ -1,4 +1,4 @@
-FROM gradle:8.10.2-jdk23-alpine
+FROM gradle:8.10.2-jdk23-alpine as build
 
 ENV APP_HOME=/opt/app
 
@@ -8,9 +8,9 @@ COPY . .
 
 RUN gradle build -x test
 
-RUN cp -R /opt/app/build/libs/* /opt/app/apps.jar
+FROM amazoncorretto:23-alpine3.21 as run
 
-RUN gradle clean
+COPY --from=build /opt/app/build/libs/* apps.jar
 
 EXPOSE 8080
 
