@@ -30,7 +30,9 @@ jobs:
         with:
           context:
           push: true
-          tags: dherkyan/cin-news-links:${{env.time}}
+          tags: |
+            dherkyan/cin-news-links:${{env.time}}
+            dherkyan/cin-news-links:latest
 
       - name: Checkout no repostiório (argocd-deploy-apps-cin-news-links-k8s)
         uses: actions/checkout@v4
