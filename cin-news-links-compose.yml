@@ -1,0 +1,12 @@
+# docker-compose -f cin-news-links-compose.yml -p cin-news-links-set up -d
+
+version: "3"
+
+services:
+  cin-news-links:
+    container_name: container-cin-news-links
+    image: cin-news-links:latest
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
