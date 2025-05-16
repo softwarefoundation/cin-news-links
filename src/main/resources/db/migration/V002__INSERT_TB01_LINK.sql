@@ -18,6 +18,8 @@ insert into tb01_link (titulo,endereco) values ('agendamento para emissão da ca
 insert into tb01_link (titulo,endereco) values ('Orientações para emissão da Nova Carteira de Identidade Nacional – CIN','https://www.ssp.am.gov.br/orientacoes-para-emissao-da-nova-carteira-de-identidade-nacional/');
 insert into tb01_link (titulo,endereco) values ('Quem tiver a nova carteira de identidade recebe excelente notícia','https://tribunademinas.com.br/colunas/maistendencias/quem-tiver-a-nova-carteira-de-identidade-recebe-excelente-noticia/');
 insert into tb01_link (titulo,endereco) values ('Prefeitura retoma atendimento para emissão da Carteira de Identidade Nacional exclusiva para maracanauenses','https://www.maracanau.ce.gov.br/prefeitura-retoma-atendimento-para-emissao-da-carteira-de-identidade-nacional-exclusiva-para-maracanauenses/');
+insert into tb01_link (titulo,endereco) values ('Nova Carteira de Identidade Nacional traz mais segurança para suas informações; confira','https://fdr.com.br/2025/02/27/nova-carteira-de-identidade-nacional-traz-mais-seguranca-para-suas-informacoes-confira/amp/');
+insert into tb01_link (titulo,endereco) values ('Perdeu o RG? Veja como emitir uma nova via de forma totalmente digital e gratuita','https://fdr.com.br/2025/02/28/perdeu-o-rg-veja-como-emitir-uma-nova-via-de-forma-totalmente-digital-e-gratuita/amp/');
 
 
 
