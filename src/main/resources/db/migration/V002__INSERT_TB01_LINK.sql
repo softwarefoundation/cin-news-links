@@ -20,6 +20,9 @@ insert into tb01_link (titulo,endereco) values ('Quem tiver a nova carteira de i
 insert into tb01_link (titulo,endereco) values ('Prefeitura retoma atendimento para emissão da Carteira de Identidade Nacional exclusiva para maracanauenses','https://www.maracanau.ce.gov.br/prefeitura-retoma-atendimento-para-emissao-da-carteira-de-identidade-nacional-exclusiva-para-maracanauenses/');
 insert into tb01_link (titulo,endereco) values ('Nova Carteira de Identidade Nacional traz mais segurança para suas informações; confira','https://fdr.com.br/2025/02/27/nova-carteira-de-identidade-nacional-traz-mais-seguranca-para-suas-informacoes-confira/amp/');
 insert into tb01_link (titulo,endereco) values ('Perdeu o RG? Veja como emitir uma nova via de forma totalmente digital e gratuita','https://fdr.com.br/2025/02/28/perdeu-o-rg-veja-como-emitir-uma-nova-via-de-forma-totalmente-digital-e-gratuita/amp/');
+insert into tb01_link (titulo,endereco) values ('Mais de 20 milhões de brasileiros já possuem a nova carteira de identidade','https://noticias.r7.com/cidades/mais-de-20-milhoes-de-brasileiros-ja-possuem-a-nova-carteira-de-identidade-10022025/');
+insert into tb01_link (titulo,endereco) values ('Últimos dias para pedir novo RG e receber ainda neste mês','https://fdr.com.br/2025/02/09/ultimos-dias-para-pedir-novo-rg-e-receber-ainda-neste-mes/');
+insert into tb01_link (titulo,endereco) values ('MUTIRÃO da Nova Carteira de Identidade começa nesta terça-feira (11) – Quais os horários de atendimento?','https://obolsafamiliabrasil.com.br/2025/02/10/mutirao-da-nova-carteira-de-identidade-comeca-nesta-terca-feira-11-quais-os-horarios-de-atendimento/');
 
 
 
