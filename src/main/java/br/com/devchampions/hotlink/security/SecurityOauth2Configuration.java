@@ -44,6 +44,9 @@ public class SecurityOauth2Configuration {
                 )
                 .logout(logout -> logout
                         .logoutSuccessUrl(logoutUrl + "?redirect_uri=" + redirectUri)
+                        .invalidateHttpSession(true)
+                        .clearAuthentication(true)
+                        .deleteCookies("JSESSIONID")
                 );
 
         return http.build();
