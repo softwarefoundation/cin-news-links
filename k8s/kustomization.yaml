@@ -12,4 +12,4 @@ resources:
 
 images:
   - name: dherkyan/cin-news-links
-    newTag: 202511151739
+    newTag: latest
