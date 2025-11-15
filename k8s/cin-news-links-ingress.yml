@@ -1,0 +1,21 @@
+# kubectl apply -f cin-news-links-ingress.yml --namespace ns-dherkyan-silva
+
+apiVersion: networking.k8s.io/v1
+
+kind: Ingress
+
+metadata:
+  name: cin-news-links-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: cin.devchampions.cloud
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: cin-news-links
+            port:
+              number: 80

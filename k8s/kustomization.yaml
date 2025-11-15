@@ -1,0 +1,15 @@
+# kubectl apply -k .
+
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: ns-dherkyan-silva
+
+resources:
+  - cin-news-links-deployment.yaml
+  - cin-news-links-ingress.yml
+
+images:
+  - name: dherkyan/cin-news-links
+    newTag: 202511151739

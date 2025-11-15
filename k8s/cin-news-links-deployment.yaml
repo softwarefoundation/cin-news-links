@@ -1,0 +1,42 @@
+# kubectl apply -f cin-news-links-deployment.yaml --namespace ns-dherkyan-silva
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cin-news-links
+  labels:
+    type: cin-news-links
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cin-news-links
+  template:
+    metadata:
+      labels:
+        app: cin-news-links
+    spec:
+      containers:
+        - name: cin-news-links
+          image: dherkyan/cin-news-links:latest
+          env:
+           - name: PROFILES_ACTIVE
+             value: dev
+           - name: H2_WEB_ALLOW_OTHERS
+             value: "true"
+          ports:
+           - containerPort: 8080 # porta da aplicação
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cin-news-links
+spec:
+  type: ClusterIP
+  selector:
+    app: cin-news-links
+  ports:
+    - name: http
+      port: 80 # porta da aplicação
+      targetPort: 8080 # porta da aplicação
+#      nodePort: 30008 # porta que será exporta externamente
