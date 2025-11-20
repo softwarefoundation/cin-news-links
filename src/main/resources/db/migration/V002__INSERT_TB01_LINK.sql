@@ -46,6 +46,7 @@ insert into tb01_link (titulo,endereco) values ('Novo RG em cartão tem um chip 
 insert into tb01_link (titulo,endereco) values ('Lista do governo infoma o local exato de agendar para fazer o CIN','https://n1n.com.br/beneficios/lista-do-governo-infoma-o-local-exato-de-agendar-fazer-o-cin/');
 insert into tb01_link (titulo,endereco) values ('SAC Bahia atualiza forma de atendimento para fazer o CIN','https://n1n.com.br/noticias-gerais/sac-bahia-atualiza-forma-de-atendimento-para-fazer-o-cin/');
 insert into tb01_link (titulo,endereco) values ('CIN em formato cartão já está disponível: veja preço, prazos e como pedir','https://n1n.com.br/beneficios/emissao-da-cin-cartao-esta-liberada-em-varios-estados-veja-preco-prazos-e-como-pedir/');
+insert into tb01_link (titulo,endereco) values ('Até quando posso usar meu RG antigo? Veja prazo para tirar a Nova Carteira de Identidade','https://www.correio24horas.com.br/brasil/ate-quando-posso-usar-meu-rg-antigo-veja-prazo-para-tirar-a-nova-carteira-de-identidade-1125');
 
 
 
